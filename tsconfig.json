@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "paths": {
+     "src/*": ["./*"]
+    },
+    "target": "es2016", 
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "jsxImportSource": "react"
+  },
+  "include": ["./globals.d.ts","./src/**/*","src/**/*.ts","./src/**/*.tsx"],
+  "exclude": ["node_modules", "build"]
+
+}
