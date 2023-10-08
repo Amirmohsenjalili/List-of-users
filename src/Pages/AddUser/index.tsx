@@ -52,7 +52,7 @@ export default function InputFormProps() {
           <div key={index}>
             <Input 
               sx={{
-                width: '50vw',
+                width: '60vw',
               }}
               {...register(i as keyof TFieldValues, { required: true })}
               placeholder={`Enter Your ${i}*`}  
