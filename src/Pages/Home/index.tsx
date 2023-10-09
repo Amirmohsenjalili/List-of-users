@@ -1,10 +1,11 @@
+import Layout from '../../Layout';
 import User from '../../Components/UsersCard'
 
 const index = () => {
     return (
-        <div>
+        <Layout>
             <User />
-        </div>
+        </Layout>
     );
 };
 

@@ -3,6 +3,7 @@ import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
+import Button from '@mui/material/Button';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
@@ -18,7 +19,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './styles.module.css';
 
 const drawerWidth = 240;
@@ -83,6 +84,8 @@ export default function PersistentDrawerLeft() {
     setOpen(false);
   };
 
+  const navigate = useNavigate();
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -97,9 +100,10 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            This is my Header
+          <Typography  variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Front end developers of Snap Grocery
           </Typography>
+          <Button color="inherit" onClick={() => navigate('/')}>Logout</Button>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -124,7 +128,7 @@ export default function PersistentDrawerLeft() {
         <List>
           {['List of Users', 'Create New User'].map((text, index) => (
             <ListItem key={text} disablePadding>
-              <Link to={index % 2 === 0 ? "/" : "/AddUser"} className={styles.link}>
+              <Link to={index % 2 === 0 ? "/ListUser" : "/AddUser"} className={styles.link}>
                 <ListItemButton>
                   <ListItemIcon>
                     {index % 2 === 0 ? <PeopleAltIcon /> : <PersonAddIcon />}

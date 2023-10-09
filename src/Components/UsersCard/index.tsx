@@ -2,6 +2,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import LinearProgress from '@mui/material/LinearProgress';
 import { Box, CardActionArea } from '@mui/material';
 import { QueryKey, useQuery } from "@tanstack/react-query";
 import { getUserData } from "../../services/getUserData"
@@ -33,7 +34,11 @@ function UserCard({ photoUrl, surName, firstName }:UserDataType) {
 }
 const User = () => {
   const { isLoading, error, data: userData } = useQuery<QueryKey,{message:string}, UserDataType[]>(["users"], getUserData);
-  if (isLoading) return <div>Loading ...</div>;
+  if (isLoading) return (
+  <Box sx={{ width: '100%' }}>
+    <LinearProgress />
+  </Box>
+  )
   if (error) return <div>An error has occurred: {error.message}</div>;
   return (
     <div>

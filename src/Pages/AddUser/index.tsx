@@ -9,6 +9,7 @@ import { useMutation } from '@tanstack/react-query';
 import { TFieldValues, FormData } from './InputFormProps.types'
 import style from './styles.module.css'
 import { addUser } from '../../services/getUserData';
+import Layout from '../../Layout';
 
 export default function InputFormProps() {
 
@@ -37,35 +38,37 @@ export default function InputFormProps() {
     mutate(data);
   };
   return (
-    <Box
-      sx={{
-        py: 2,
-        px: 40,
-        display: 'grid',
-        gap: 2,
-        alignItems: 'center',
-      }}
-    >
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <Stack spacing={1}>
-        {["firstName", "surName", "number", "email", "photoUrl"].map((i, index) => (
-          <div key={index}>
-            <Input 
-              sx={{
-                width: '60vw',
-              }}
-              {...register(i as keyof TFieldValues, { required: true })}
-              placeholder={`Enter Your ${i}*`}  
-            />
-            {errors[i as keyof TFieldValues] && <p className={style.error}>{i} is required</p>}
-          </div>
-        ))}
-        <Button type="submit">Submit</Button>
-      </Stack>
-    </form>
-    {isLoading && <p>Adding user ...</p>}
-    {isError && error instanceof Error && <p>An error occurred: {error.message}</p>}
-    {isSuccess && <p>User added successfully!</p>}
-    </Box>
+    <Layout>
+      <Box
+        sx={{
+          py: 2,
+          px: 40,
+          display: 'grid',
+          gap: 2,
+          alignItems: 'center',
+        }}
+      >
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Stack spacing={1}>
+          {["firstName", "surName", "number", "email", "photoUrl"].map((i, index) => (
+            <div key={index}>
+              <Input 
+                sx={{
+                  width: '60vw',
+                }}
+                {...register(i as keyof TFieldValues, { required: true })}
+                placeholder={`Enter Your ${i}*`}  
+              />
+              {errors[i as keyof TFieldValues] && <p className={style.error}>{i} is required</p>}
+            </div>
+          ))}
+          <Button type="submit">Submit</Button>
+        </Stack>
+      </form>
+      {isLoading && <p>Adding user ...</p>}
+      {isError && error instanceof Error && <p>An error occurred: {error.message}</p>}
+      {isSuccess && <p>User added successfully!</p>}
+      </Box>
+    </Layout>
   );
 }
