@@ -1,10 +1,9 @@
 import Layout from '../../Layout';
-import User from '../../Components/UsersCard'
-
+import Main from '../../container/main'
 const index = () => {
     return (
         <Layout>
-            <User />
+            <Main />
         </Layout>
     );
 };

@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useMutation } from '@tanstack/react-query';
-import { TFieldValues, FormData } from './InputFormProps.types'
+import { TFieldValues, FormData } from './types'
 import style from './styles.module.css'
 import { addUser } from '../../services/getUserData';
 import Layout from '../../Layout';

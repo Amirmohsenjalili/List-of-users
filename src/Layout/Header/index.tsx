@@ -24,7 +24,7 @@ import styles from './styles.module.css';
 
 const drawerWidth = 240;
 
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
+export const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;
 }>(({ theme, open }) => ({
   flexGrow: 1,
@@ -33,13 +33,14 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
-  marginLeft: `-${drawerWidth}px`,
+  // marginLeft: `-${drawerWidth}px`,
   ...(open && {
+    marginLeft: 240,
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    marginLeft: 0,
+    // marginLeft: 10,
   }),
 }));
 
@@ -75,11 +76,11 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 export default function PersistentDrawerLeft() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-
+  
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-
+  
   const handleDrawerClose = () => {
     setOpen(false);
   };
@@ -140,9 +141,16 @@ export default function PersistentDrawerLeft() {
           ))}
         </List>
       </Drawer>
-      <Main open={open}>
-        <DrawerHeader />
-      </Main>
+      <DrawerHeader />
+      {/* <Main open={open}>
+      </Main> */}
     </Box>
   );
 }
+
+const sidebarItems = [
+  {
+    id: 1.
+    
+  }
+]

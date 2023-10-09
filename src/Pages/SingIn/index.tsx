@@ -9,8 +9,8 @@ import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import { QueryKey, useQuery } from "@tanstack/react-query";
 import { getUserData } from "../../services/getUserData";
-import { UserDataType } from '../../Components/UsersCard/User.type';
-import { FormData } from '../../Pages/AddUser/InputFormProps.types'
+import { UserDataType } from '../../Components/UsersCard/types';
+import { FormData } from '../AddUser/types'
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
