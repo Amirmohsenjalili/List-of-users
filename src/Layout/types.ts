@@ -1,3 +1,3 @@
 export interface Prop {
-    children: React.ReactNode;
+    children?: React.ReactNode;
 }

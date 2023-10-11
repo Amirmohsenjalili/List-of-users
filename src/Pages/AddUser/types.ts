@@ -1,9 +1,9 @@
 export type FormData = {
-    firstName: string;
-    surName: string;
+    firstName?: string;
+    surName?: string;
     number: string;
     email: string;
-    photoUrl: string;
+    photoUrl?: string;
   }
 export type TFieldValues = {
   firstName: string;
@@ -12,3 +12,5 @@ export type TFieldValues = {
   email: string;
   photoUrl: string;
 };
+
+

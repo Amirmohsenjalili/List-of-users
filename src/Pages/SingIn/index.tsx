@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
@@ -15,6 +14,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useNavigate } from 'react-router-dom';
+import styles from './styles';
 
 export default function SignIn() {
 
@@ -32,57 +32,31 @@ export default function SignIn() {
     resolver: zodResolver(schema),
   });
   const navigate = useNavigate();
-  const onSubmit:any = (data: FormData) => {
+  const onSubmit = (data: FormData) => {
     const match = userData?.find(user => user.email === data.email && user.number === data.number);
     if (match) {
         alert('Welcome to the user list ');
-        navigate('/ListUser');
+        navigate('/&/ListUser');
     } else {
         alert('Check your email or phone number')
     }
   };
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        '& > :not(style)': {
-          mx: 'auto',
-          mt: '100px',
-          width: 600,
-          height: 500,
-        },
-      }}
-    >
+    <Box sx={styles.myBox}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Paper 
           elevation={3}
-          sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              pt: '30px',
-              alignItems: 'center',
-              gap: '15px',
-              backgroundColor: 'rgba(100, 100, 100, 0.1)'
-          }}
+          sx={styles.myPaper}
           >
           <Typography variant="h4" gutterBottom>
               Sign in
           </Typography>
-          <LockOutlinedIcon 
-          sx={{
-            backgroundColor: 'rgba(10, 100, 10, 0.3)',
-            borderRadius: 5,
-            p: 1,
-            }}/>
+          <LockOutlinedIcon sx={styles.myLockOutlinedIcon}/>
           <TextField
             required
             id="outlined-required"
             label="Email Address"
-            sx={{
-              width: '350px',
-              mt: 4
-            }}
+            sx={styles.myField}
             size="small"
             {...register('email', { required: true })}
             error={!!errors.email}
@@ -92,16 +66,14 @@ export default function SignIn() {
             required
             id="outlined-required"
             label="Password(Phone number)"
-            sx={{
-              width: '350px',
-            }}
+            sx={styles.myField}
             size="small"
             {...register('number', { required: true })}
             error={!!errors.number}
             helperText={errors.number?.message}
           />
-          <FormControlLabel control={<Checkbox defaultChecked />} label="Remember me" sx={{width: '350px'}} />
-          <Button variant="contained" size="small"  type="submit" sx={{width: '350px', mb: 10}}>
+          <FormControlLabel control={<Checkbox defaultChecked />} label="Remember me" sx={styles.myField} />
+          <Button variant="contained" size="small"  type="submit" sx={styles.myButton}>
             SIGN IN
           </Button>
         </Paper>

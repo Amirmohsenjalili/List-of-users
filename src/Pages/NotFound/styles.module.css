@@ -1,0 +1,12 @@
+.container {
+    background-image: url('https://riracoseo.com/wp-content/uploads/2021/05/%D9%87%D8%B1-%D8%A2%D9%86%DA%86%D9%87-%D8%AF%D8%B1-%D8%AE%D8%B5%D9%88%D8%B5-%D8%A7%D8%B1%D9%88%D8%B1-404-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A8%D8%AF%D8%A7%D9%86%DB%8C%D8%AF.jpg');
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 900px;
+} 
+
+.childContainer {
+    height: 40px; 
+}

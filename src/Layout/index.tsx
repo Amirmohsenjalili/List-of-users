@@ -1,18 +1,19 @@
 import React from 'react';
 import Header from './Header';
 import Box from '@mui/material/Box';
-import { Main } from './Header';
-
+import styles from './styles';
 import { Prop } from './types'
+import { Outlet } from 'react-router-dom';
+import Sidebar from './Sidebar';
 
 const Layout: React.FC<Prop> = ({ children }) => {
-  let open: boolean = false;
+
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-      <Header/>
-      <Main open={open}>
+    <Box sx={styles.myBox}>
+      <Header />
+      <Sidebar />
+      <Outlet />
       {children}
-      </Main>
     </Box>
   );
 };

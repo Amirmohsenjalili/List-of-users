@@ -1,13 +1,18 @@
-import { Link } from 'react-router-dom';
-import Layout from '../../Layout';
+import { useNavigate } from 'react-router-dom';
+import styles from './styles.module.css';
+import Box from '@mui/material/Box';
+import { Button, Typography } from '@mui/material';
 
-const index = () => {
+const NotFound = () => {
+
+    const navigate = useNavigate();
+   
     return (
-        <Layout>
-            The page according to your request was not found. Please try again. 
-            <Link to={'/'}>Click to return to the Home page</Link>
-        </Layout>
+        <Box className={styles.container}>
+            <Button variant="text" onClick={() => navigate('/&/ListUser')} className={styles.childContainer}>Back To Home</Button>
+            <Typography color='error' variant="h5">Your desired page was not found</Typography>
+        </Box>
     );
 };
 
-export default index;
+export default NotFound;

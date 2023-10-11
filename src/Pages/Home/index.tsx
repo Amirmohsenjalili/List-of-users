@@ -1,10 +1,9 @@
-import Layout from '../../Layout';
-import Main from '../../container/main'
+import Container from '../../container'
 const index = () => {
     return (
-        <Layout>
-            <Main />
-        </Layout>
+        <div>
+            <Container />
+        </div>
     );
 };
 

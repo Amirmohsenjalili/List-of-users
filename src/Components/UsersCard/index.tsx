@@ -4,12 +4,13 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Box, CardActionArea } from '@mui/material';
 import { UserDataType } from './types';
+import styles from './style';
 
 const UserCard = ({ photoUrl, surName, firstName }:UserDataType) => {
 
   return (
     <Box display="inline-flex" flexWrap="wrap" justifyContent="center">
-      <Card sx={{ maxWidth: 345, m: 2}}>
+      <Card sx={styles.myCard}>
         <CardActionArea>
           <CardMedia
             component="img"
