@@ -39,7 +39,7 @@ export const SignIn = () => {
     mode: "onBlur",
     resolver: zodResolver(schema),
   });
-  const { enqueueSnackbar } = useSnackbar()
+  const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
   const onSubmit = (data: FormData) => {
     const match = userData?.find(

@@ -69,17 +69,17 @@ export const Sidebar = () => {
       </List>
     </Drawer>
   );
-}
+};
 
-  const ListBar = [
-    {
-      id: 1,
-      label: "List of Users",
-      value: "usersList",
-    },
-    {
-      id: 2,
-      label: "Create New User",
-      value: "createNewUser",
-    },
-  ];
+const ListBar = [
+  {
+    id: 1,
+    label: "List of Users",
+    value: "usersList",
+  },
+  {
+    id: 2,
+    label: "Create New User",
+    value: "createNewUser",
+  },
+];
