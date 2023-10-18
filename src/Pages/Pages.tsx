@@ -4,6 +4,7 @@ import { Home } from "./Home";
 import { AddUser } from "./AddUser";
 import { NotFound } from "./NotFound";
 import { Layout } from "../Layout";
+import { UsersDetail } from "./UsersDetail";
 
 export const Pages = () => {
   return (
@@ -12,6 +13,7 @@ export const Pages = () => {
       <Route path="/&" element={<Layout />}>
         <Route path="ListUser" element={<Home />} />
         <Route path="AddUser" element={<AddUser />} />
+        <Route path="UsersDetail/:id" element={<UsersDetail />} />
       </Route>
       <Route path="/*" element={<NotFound />} />
     </Routes>

@@ -19,7 +19,6 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 export const AddUser = () => {
-  const listInput = ["firstName", "surName", "number", "email", "photoUrl"];
   const [open, setOpen] = React.useState(false);
   const handleClose = (
     event?: React.SyntheticEvent | Event,
@@ -77,17 +76,17 @@ export const AddUser = () => {
                 sx={{
                   width: "100%",
                 }}
-                {...register(text as keyof TFieldValues, { required: true })}
-                placeholder={`Enter Your ${text}*`}
+                {...register(text.title as keyof TFieldValues, { required: true })}
+                placeholder={`Enter Your ${text.title}*`}
               />
-              {errors[text as keyof TFieldValues] && (
+              {errors[text.title as keyof TFieldValues] && (
                 <Typography
                   variant="caption"
                   display="block"
                   gutterBottom
                   color="error"
                 >
-                  {text} is required
+                  {text.title} is required
                 </Typography>
               )}
             </div>
@@ -114,3 +113,23 @@ export const AddUser = () => {
     </Box>
   );
 };
+
+const listInput = [
+  {
+    id:0,
+    title: "firstName"
+  },{
+    id:1,
+    title: "surName"
+  },{
+    id:2,
+    title: "number"
+  },{
+    id:3,
+    title: "email"
+  },{
+    id:3,
+    title: "photoUrl"
+  },
+];
+

@@ -30,6 +30,7 @@ export const Home = () => {
           surName={item.surName}
           firstName={item.firstName}
           number={item.number}
+          id={item.id}
         />
       ))}
     </Box>
