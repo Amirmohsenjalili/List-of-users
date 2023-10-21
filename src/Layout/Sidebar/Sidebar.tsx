@@ -1,5 +1,5 @@
 import { useAtom } from "jotai";
-import { DrawerOpenAtom } from "../Atoms/atoms";
+import { DrawerOpenAtom } from "../atoms";
 import { useTheme } from "@mui/material/styles";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";

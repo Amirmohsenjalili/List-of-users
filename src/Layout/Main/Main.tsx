@@ -1,4 +1,6 @@
 import { styled } from "@mui/material/styles";
+import React from "react";
+import { mainType } from './type';
 
 export const Main = styled("main", {
   shouldForwardProp: (prop) => prop !== "open",
@@ -18,4 +20,4 @@ export const Main = styled("main", {
       duration: theme.transitions.duration.enteringScreen,
     }),
   }),
-}));
+})) as React.FC<mainType>;

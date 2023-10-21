@@ -1,10 +1,9 @@
 import { styled } from "@mui/material/styles";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
-import { drawerWidth } from "../Atoms/atoms";
+import React from "react";
+import { AppBarProps } from "./type";
 
-interface AppBarProps extends MuiAppBarProps {
-  open?: boolean;
-}
+const drawerWidth = 240;
 
 export const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
@@ -21,4 +20,4 @@ export const AppBar = styled(MuiAppBar, {
       duration: theme.transitions.duration.enteringScreen,
     }),
   }),
-}));
+})) as React.FC<AppBarProps>;

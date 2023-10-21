@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import { Sidebar } from "./Sidebar";
 import { Main } from "./Main";
 import { useAtom } from "jotai";
-import { DrawerOpenAtom } from "./Atoms";
+import { DrawerOpenAtom } from "./atoms";
 
 export const Layout = () => {
   const [open] = useAtom(DrawerOpenAtom);
