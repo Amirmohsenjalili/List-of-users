@@ -1,11 +1,18 @@
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { BrowserRouter } from 'react-router-dom';
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import { SnackbarProvider } from "notistack";
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
 root.render(
   <BrowserRouter>
-    <App />
+    <SnackbarProvider
+      autoHideDuration={2000}
+      anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
+    >
+      <App />
+    </SnackbarProvider>
   </BrowserRouter>
 );
-
