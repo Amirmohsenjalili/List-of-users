@@ -15,8 +15,7 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import { Link } from "react-router-dom";
-import styles from "./styles.module.css";
+import Link from "@mui/material/Link";
 import { DrawerHeader } from "./styled";
 
 export const Sidebar = () => {
@@ -54,8 +53,10 @@ export const Sidebar = () => {
         {ListBar.map((text, index) => (
           <ListItem key={index} disablePadding>
             <Link
-              to={index % 2 === 0 ? "ListUser" : "AddUser"}
-              className={styles.link}
+              href={index % 2 === 0 ? "ListUser" : "AddUser"}
+              underline="none"
+              color="inherit"
+              sx={{width: '100vw'}}
             >
               <ListItemButton>
                 <ListItemIcon>
