@@ -36,4 +36,12 @@ const myButton: SxProps = {
   mb: 10,
 };
 
-export default { myBox, myPaper, myLockOutlinedIcon, myField, myButton };
+const styles = {
+  myBox,
+  myPaper,
+  myLockOutlinedIcon,
+  myField,
+  myButton,
+};
+
+export default styles;

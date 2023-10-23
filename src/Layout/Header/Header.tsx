@@ -6,7 +6,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom";
 import { useAtom } from "jotai";
 import { AppBar } from "./styled";
-import { DrawerOpenAtom } from "../atoms"
+import { DrawerOpenAtom } from "../atoms";
 
 export const Header = () => {
   const [open, setOpen] = useAtom(DrawerOpenAtom);

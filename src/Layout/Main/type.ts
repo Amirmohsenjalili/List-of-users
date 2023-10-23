@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
 export type mainType = {
-    open?: boolean;
-    children: React.ReactNode;
-}
+  open?: boolean;
+  children: React.ReactNode;
+};

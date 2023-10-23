@@ -28,7 +28,7 @@ export const UsersDetail = () => {
   return (
     <Card variant="soft" orientation="horizontal" sx={styles.myCard}>
       <AspectRatio ratio=".85" sx={styles.myAspectRatio}>
-        <img src={data.photoUrl} loading="lazy" alt="users photo" />
+        <img src={data.photoUrl} loading="lazy" alt="usersIcon" />
       </AspectRatio>
       <CardContent sx={styles.myCardContent}>
         <Typography fontWeight="xl" textColor="success.plainColor" level="h2">

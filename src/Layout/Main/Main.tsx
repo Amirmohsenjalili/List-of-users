@@ -1,6 +1,6 @@
 import { styled } from "@mui/material/styles";
 import React from "react";
-import { mainType } from './type';
+import { mainType } from "./type";
 
 export const Main = styled("main", {
   shouldForwardProp: (prop) => prop !== "open",

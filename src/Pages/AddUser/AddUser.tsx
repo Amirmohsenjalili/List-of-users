@@ -12,12 +12,11 @@ import { TFieldValues, FormData } from "./types";
 import { addUser } from "../../services/Users/userData";
 import { Box, Typography } from "@mui/material";
 
-const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
-  props,
-  ref
-) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
+  function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  }
+);
 export const AddUser = () => {
   const [open, setOpen] = React.useState(false);
   const handleClose = (
@@ -76,7 +75,9 @@ export const AddUser = () => {
                 sx={{
                   width: "100%",
                 }}
-                {...register(text.title as keyof TFieldValues, { required: true })}
+                {...register(text.title as keyof TFieldValues, {
+                  required: true,
+                })}
                 placeholder={`Enter Your ${text.title}*`}
               />
               {errors[text.title as keyof TFieldValues] && (
@@ -116,20 +117,23 @@ export const AddUser = () => {
 
 const listInput = [
   {
-    id:0,
-    title: "firstName"
-  },{
-    id:1,
-    title: "surName"
-  },{
-    id:2,
-    title: "number"
-  },{
-    id:3,
-    title: "email"
-  },{
-    id:3,
-    title: "photoUrl"
+    id: 0,
+    title: "firstName",
+  },
+  {
+    id: 1,
+    title: "surName",
+  },
+  {
+    id: 2,
+    title: "number",
+  },
+  {
+    id: 3,
+    title: "email",
+  },
+  {
+    id: 3,
+    title: "photoUrl",
   },
 ];
-

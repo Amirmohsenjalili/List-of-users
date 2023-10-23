@@ -6,12 +6,20 @@ import { Box, CardActionArea } from "@mui/material";
 import { UserDataType } from "./types";
 import { useNavigate } from "react-router-dom";
 
-
-export const UserCard = ({ photoUrl, surName, firstName, id }: UserDataType) => {
-
-  const navigate = useNavigate()
+export const UserCard = ({
+  photoUrl,
+  surName,
+  firstName,
+  id,
+}: UserDataType) => {
+  const navigate = useNavigate();
   return (
-    <Box display="inline-flex" flexWrap="wrap" justifyContent="center" onClick={() => navigate(`/&/UsersDetail/${id}`)}>
+    <Box
+      display="inline-flex"
+      flexWrap="wrap"
+      justifyContent="center"
+      onClick={() => navigate(`/&/UsersDetail/${id}`)}
+    >
       <Card
         sx={{
           maxWidth: 345,

@@ -43,7 +43,7 @@ const myButton: SxProps = {
   },
 };
 
-export default {
+const styles = {
   myLinearProgress,
   myBox,
   myCard,
@@ -52,3 +52,5 @@ export default {
   myTypography,
   myButton,
 };
+
+export default styles;

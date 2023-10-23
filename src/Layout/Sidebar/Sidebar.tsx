@@ -56,7 +56,7 @@ export const Sidebar = () => {
               href={index % 2 === 0 ? "ListUser" : "AddUser"}
               underline="none"
               color="inherit"
-              sx={{width: '100vw'}}
+              sx={{ width: "100vw" }}
             >
               <ListItemButton>
                 <ListItemIcon>
